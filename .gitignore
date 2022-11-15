@@ -1,0 +1,5 @@
+.idea
+.DS_Store
+
+etc/docker/mysql
+etc/docker/mysql/*
