@@ -15,11 +15,8 @@ Requisitos obligatorios:
   - getMunicipalities
   - saveMunicipality
   - deleteMunicipality
-  - Endpoint que dando (X>0) IDs de provincias, sume todos sus habitantes y devuelva que % es del total de población
-- Creación (en twig o cualquier framework de front) de una aplicación que consuma los siguientes endpoints via Ajax:
-  - getMunicipalities
-  - saveMunicipality
-  - deleteMunicipality
+  - Endpoint que dando (X>0) IDs de provincias, sume todos sus habitantes y devuelva que % es del total de España
+- Creación (en twig o cualquier framework de front) de una aplicación que consuma los anteriores 4 endpoints via Ajax
 
 Requisitos opcionales:
 
