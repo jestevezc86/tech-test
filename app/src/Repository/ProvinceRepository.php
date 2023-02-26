@@ -20,4 +20,21 @@ class ProvinceRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Province::class);
     }
+
+    public function getProvincesPopulation($ids): float
+    {
+        //Se que se podría hacer en una sola consulta pero por sencillez y claridad lo he hecho en 2 diferentes
+        $sql = $this->createQueryBuilder('s')
+            ->select('SUM(s.population) AS total1')
+            ->where('s.id IN (:IDS)')->setParameter('IDS', json_decode($ids))
+            ->getQuery()->getResult();
+
+        $sql2 = $this->createQueryBuilder('t')
+            ->select('SUM(t.population) AS total2')
+            ->getQuery()->getResult();
+
+        $result = 100*$sql[0]['total1']/$sql2[0]['total2'];
+        
+        return $result;
+    }
 }
